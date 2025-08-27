@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* ===== CSS Variables for Dark/Light Mode ===== */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --accent-color: #4f46e5;
+      --card-bg: #f5f5f5;
+    }
+
+    body.dark {
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+      --accent-color: #38bdf8;
+      --card-bg: #2a2a2a;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .toggle-btn {
+      background: var(--accent-color);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    /* Projects Section */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card-link {
+      text-decoration: none;  /* remove underline */
+      color: inherit;         /* keep text color normal */
+      display: block;         /* allow full card clickable */
+    }
+
+    .card-link .card {
+      cursor: pointer;        /* pointer on hover */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: var(--card-bg);
+      transition: transform 0.3s, background-color 0.3s;
+      text-align: center;
+    }
+
+    .card-link .card:hover {
+      transform: translateY(-5px);
+      background-color: #e0e0e0; /* optional hover background */
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyPortfolio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+  </header>
+
+  <section class="hero">
+    <h1>Hello, I'm <span style="color:var(--accent-color)">Shobhit Tripathi</span></h1>
+    <p>A passionate web developer creating beautiful websites.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Currently pursuing Bachelors of Technology in Computer Science and Engineering (A.I) @University of Lucknow.
+
+I am a Computer Science Engineering undergraduate from University of Lucknow. I currently do not have any experience in the corporate world but I am keen to work as an intern to make the vision of a company a reality.
+
+Technology excites me and I am always in awe of the change it drives in the world. Certain skills that i have worked with include HTML, CSS, Bootstrap and JavaScript. And what I lack in skills I make up for with my determination to learn.
+
+Outside of Tech , I am a person who loves spending time with family and I invest most of my  time improving myself.</p>
+  </section>
+
+  <!-- Updated Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <!-- Project One -->
+      <a href="https://github.com/shobhit-15-tripathi/Bootstrap-web-page" target="_blank" class="card-link">
+        <div class="card">🌐 Bootstrap-web-page</div>
+      </a>
+
+      <!-- Project Two -->
+      <a href="https://github.com/shobhit-15-tripathi/expanding-image-gallery" target="_blank" class="card-link">
+        <div class="card">📱 Expanding Image Gallery</div>
+      </a>
+
+      <!-- Project Three -->
+      <a href="https://github.com/shobhit-15-tripathi/Portfolio-Website" target="_blank" class="card-link">
+        <div class="card">🎨 My Portfolio Website</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>📤: shobhittripathi2215@gmail.com
+      <br>📱: + 91 9236825386
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Shobhit Tripathi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.toggle-btn');
+      if(document.body.classList.contains('dark')){
+        btn.textContent = "☀️";
+      } else {
+        btn.textContent = "🌙";
+      }
+    }
+  </script>
+</body>
+</html>
